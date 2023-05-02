@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign Up</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="nameField">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" placeholder="Name">
+                    </div>
+
+
+
+                    <div class="input-field">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" placeholder="Email">
+                    </div>
+
+
+
+                    <div class="input-field">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" placeholder="Password">
+                    </div>
+
+
+
+                    <p>Forgot password? <a href="#">Click Here!</a></p>
+                </div>
+                <btn class="btn-field">
+                    <button type="button" id="signupBtn">Sign up</button>
+                    <button type="button" id="signinBtn" class="disable">Sign in</button>
+                </btn>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    
+
+    <script>
+        let signupBtn= document.getElementById("signupBtn");
+        let signinBtn= document.getElementById("signinBtn");
+        let nameField= document.getElementById("nameField");
+        let title= document.getElementById("title");
+
+
+        signinBtn.onclick=function(){
+            nameField.style.maxHeight='0';
+            title.innerHTML = "Sign in";
+            signupBtn.classList.add("disable");
+            signinBtn.classList.remove("disable");
+        }
+
+        signupBtn.onclick=function(){
+            nameField.style.maxHeight='60px';
+            title.innerHTML = "Sign up";
+            signinBtn.classList.remove("disable");
+            signupBtn.classList.add("disable");
+        }
+
+
+    </script>
+
+
+
+
+
+</body>
+</html>
